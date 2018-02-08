@@ -12,10 +12,9 @@
                 var attributes = [
                     {
                         type: 'Text', name: 'ImageUrlSample', value:
-                            $('#Image').image_selector_input('getSelected'),
-                        type: 'Text', name: 'ImageSelected', value:
-                            $('#selectedImage').image_selector_input('getSelected')
-                    }
+                            $('#Image').image_selector_input('getSelected')},
+                    {   type: 'Text', name: 'ImageSelected', value:
+                            $('#selectedImage').image_selector_input('getSelected')}
                 ];
                 return attributes;
             });
@@ -31,7 +30,7 @@
         $(document).ready(function() {
             $('#Image').image_selector_input({
                 field_id: 'Image',
-                dialog_id: 'Image_selector_dialog',
+                dialog_id: 'Image_selector_dialog_id',
                 url: '{!imageUrl}'
             });
         });
@@ -46,11 +45,10 @@
             $('#selectedImage').image_selector_input({
                 field_id: 'selectedImage',
                 dialog_id: 'Image_selector_dialog_id',
-                url: '{!selectedimageUrl}'
+                url: '{!selectedImageUrl}'
             });
         });
     </script>
-
 
     <!--
     ----------------------------------- Markup ------------------------------------------------
@@ -67,6 +65,8 @@
         <label class="ocmsLabel">When bookmarked</label>
         <div id="selectedImage"/>
     </div>
+
+
 
 
 </apex:page>
