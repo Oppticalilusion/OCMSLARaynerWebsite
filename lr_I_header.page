@@ -1,0 +1,10 @@
+<apex:page controller="cms.CoreController" standardStylesheets="false" showHeader="false" sidebar="false" cache="false">
+
+    <header>
+            <cms:Panel panelName="header1" panelController="{!controller}" panelHeight="200px"/>    
+    </header>
+
+        <cms:Panel panelName="menuPanel" panelController="{!controller}" panelHeight="50px" />
+
+
+</apex:page>

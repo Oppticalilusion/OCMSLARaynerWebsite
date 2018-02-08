@@ -1,0 +1,72 @@
+<!--
+ - Created by kevanrayner on 2017-11-23.
+ -->
+
+<apex:page controller="cms.CreateContentController" extensions="bookmarkIconclass"
+           showHeader="false" sidebar="false" cache="false"
+           standardStylesheets="false">
+
+    <script>
+        $(document).ready(function() {
+            ce.content_editor('registerSaveFunction', function () {
+                var attributes = [
+                    {
+                        type: 'Text', name: 'ImageUrlSample', value:
+                            $('#Image').image_selector_input('getSelected'),
+                        type: 'Text', name: 'ImageSelected', value:
+                            $('#selectedImage').image_selector_input('getSelected')
+                    }
+                ];
+                return attributes;
+            });
+        });
+
+    </script>
+
+    <!--
+    ------------------------------------ Image Selector ----------------------------------------
+    -->
+
+    <script>
+        $(document).ready(function() {
+            $('#Image').image_selector_input({
+                field_id: 'Image',
+                dialog_id: 'Image_selector_dialog',
+                url: '{!imageUrl}'
+            });
+        });
+    </script>
+
+    <!--
+    ------------------------------------ Image Selector ----------------------------------------
+    -->
+
+    <script>
+        $(document).ready(function() {
+            $('#selectedImage').image_selector_input({
+                field_id: 'selectedImage',
+                dialog_id: 'Image_selector_dialog_id',
+                url: '{!selectedimageUrl}'
+            });
+        });
+    </script>
+
+
+    <!--
+    ----------------------------------- Markup ------------------------------------------------
+    -->
+
+    <div style="font-size: 18px; font-family:arial;">Image Selector</div>
+    <div style="padding-top: 20px; padding-bottom: 20px;">
+        <label class="ocmsLabel">When not bookmarked</label>
+        <div id="Image"/>
+    </div>
+
+    <div style="font-size: 18px; font-family:arial;">Image Selector</div>
+    <div style="padding-top: 20px; padding-bottom: 20px;">
+        <label class="ocmsLabel">When bookmarked</label>
+        <div id="selectedImage"/>
+    </div>
+
+
+</apex:page>

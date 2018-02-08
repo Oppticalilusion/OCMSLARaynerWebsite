@@ -1,0 +1,6 @@
+<apex:page controller="cms.CoreController" standardStylesheets="false" showHeader="false" sidebar="false" cache="false">
+<footer>
+         <cms:Panel panelName="footer1" panelController="{!controller}" panelHeight="50px"/>
+         
+    </footer>
+</apex:page>

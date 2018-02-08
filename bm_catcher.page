@@ -1,0 +1,8 @@
+<apex:page controller="cms.CreateContentController" extensions="bmCatcherclass"
+           showHeader="false" sidebar="false" cache="false"
+           standardStylesheets="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Hey There</h1>
+  Nothing actually happends here, it's all on the backend just need this content element to exist
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

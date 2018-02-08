@@ -1,0 +1,26 @@
+<apex:page id="TwoColumnTemplate" controller="cms.CoreController" standardStylesheets="false" showHeader="false" sidebar="false" cache="false">
+<apex:composition template="{!page_template_reference}">
+
+<apex:define name="header">
+    <apex:composition template="lr_I_head" />
+</apex:define>
+
+<apex:define name="body">
+<div class="wrapper">
+    <apex:composition template="lr_I_header" />
+    <main class="twobodystuff">
+        <div class="leftColumn">
+            <cms:Panel panelName="bodyLeft" panelController="{!controller}" panelHeight="150px" panelWidth="300px"/>
+        </div>
+        <div class="rightColumn">
+            <cms:Panel panelName="bodyRight" panelController="{!controller}" panelHeight="150px" panelWidth="400px"/>
+        </div>
+    </main>
+    
+<apex:composition template="lr_I_footer" />
+  
+</div>    
+</apex:define>  
+
+</apex:composition>
+</apex:page>

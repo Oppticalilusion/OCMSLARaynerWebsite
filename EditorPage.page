@@ -1,0 +1,90 @@
+<apex:page controller="cms.CreateContentController" extensions="KevansContentTemplate" showHeader="false"
+           sidebar="false" cache="false" standardStylesheets="false">
+
+    <link rel="stylesheet" href="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/css/testimonials.css')}" type="text/css" charset="utf-8" />
+
+
+    <script type="text/javascript" language="javascript">
+$(document).ready(function() {
+    CKEDITOR.replace('tQuote', {!CKEditorConfig});
+
+    $( '#Image' ).image_selector_input({
+        field_id:  'Image' ,
+        dialog_id:  'Image_selector_dialog' ,
+        url:  '{!imageUrl}'
+    });
+    //  Save  the  selected  attribute  value  on  the  content  item
+    ce.content_editor( 'registerSaveFunction' ,  function ()  {
+        return  [
+            {type:  'Text' ,  name:  'imageUrl' ,  value:
+                    $( '#Image' ).image_selector_input( 'getSelected' )}
+        ];
+    });
+
+
+    ce.content_editor('registerSaveFunction', function() {
+       var attributes = [
+           { name: 'tTitle', value: $('#titleField').val(), type: 'Text'},
+           { name: 'tName', value: $('#nameField').val(), type: 'Text'},
+           { name: 'tCompany', value: $('#companyField').val(), type: 'Text'},
+           { name: 'tWebsite', value: $('#websiteField').val(), type: 'Text'},
+           { name: 'tLink', value: $('#linkField').val(), type: 'Link'},
+          /*{ name: 'tQuote', value: $('#quoteField').val(), type: 'Text'},*/
+           { name: 'tQuote', value: CKEDITOR.instances['tQuote'].getData(), type: 'Text'}
+       ];
+     
+       return attributes;
+    });
+});
+    </script>
+
+    <div>
+        <label class="ocmsLabel">Image</label>
+        <div id="Image"/>
+    </div>
+
+    <div class="test_item_wrap">
+        <label class="titleLabel" for="titleField"> Title </label>
+        <input id="titleField" type="text" value="{!tTitle}"/>
+        <p class="ocmsHelpText"> The title of the article. </p>
+    </div>
+
+    <div class="test_item_wrap">
+        <label class="nameLabel" for="nameField"> Name </label>
+        <input id="nameField" type="text" value="{!tName}"/>
+        <p class="ocmsHelpText"> The name of the Writer. </p>
+    </div>
+
+    <div class="test_item_wrap">
+        <label class="companyLabel" for="companyField"> Company </label>
+        <input id="companyField" type="text" value="{!tCompany}"/>
+        <p class="ocmsHelpText"> The name of the Company. </p>
+    </div>
+
+    <div class="test_item_wrap">
+        <label class="websiteLabel" for="websiteField"> Website </label>
+        <input id="websiteField" type="text" value="{!tWebsite}"/>
+        <p class="ocmsHelpText"> Used as the clickable link to the desired website. </p>
+    </div>
+
+    <div class="test_item_wrap">
+        <label class="linkLabel" for="linkField"> Website Link </label>
+        <input id="linkField" type="text" value="{!tLink}"/>
+        <p class="ocmsHelpText"> The url of the website to be directed towards. </p>
+    </div>
+<!--
+    <div class="test_item_wrap">
+        <label class="quoteLabel" for="quoteField"> Quote </label>
+        <textarea id="quoteField"> {!tQuote} </textarea>
+        <p class="ocmsHelpText"> Wise Words </p>
+    </div>
+-->
+    <div class="test_item_wrap">
+        <label class="ocmsLabel"><b> Quote </b></label>
+        <apex:outputText escape="false">
+            <textarea name="tQuote">{!tQuote}</textarea>
+        </apex:outputText>
+    </div>
+
+
+</apex:page>

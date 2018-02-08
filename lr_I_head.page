@@ -1,0 +1,6 @@
+<apex:page controller="cms.CoreController" standardStylesheets="false" showHeader="false" sidebar="false" cache="false">
+
+    <link rel="stylesheet" href="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/css/master.css')}" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i" />
+    
+</apex:page>
