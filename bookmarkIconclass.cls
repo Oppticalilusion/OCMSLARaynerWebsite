@@ -33,6 +33,7 @@ global virtual with sharing class bookmarkIconclass extends cms.ContentTemplateC
         }
     }
 
+
     //Does nothing just here for remoteaction referenceing later
     @RemoteAction
     global static String IwannaSave() {
