@@ -24,3 +24,8 @@ bmCatcherclass
 
 Things to do:
 Work on naming conventions to adhere with Stantive guidelines
+
+
+
+Original Site by Imagine Creative Communications
+<a href="http://imaginecreative.com" target="_blank">Imagine Creative Communications</a>
