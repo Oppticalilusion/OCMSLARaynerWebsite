@@ -2,24 +2,24 @@
 
 Will add all pages that are used to the website, goal is to get a feel for Git
 
-Layout Pages:
-lr_l_footer.page
-lr_l_head.page
-lr_l_header.page
+Layout Pages: {
+lr_l_footer.page, 
+lr_l_head.page, 
+lr_l_header.page }
 
-Template Pages:
-lr_t_OneColumn.page
-lr_t_TwoColumn.page
+Template Pages: {
+lr_t_OneColumn.page, 
+lr_t_TwoColumn.page }
 
-Custom Content Pages:
-EditorPage.page
-bookmarksIconPage.page
-bm_catcher.page
+Custom Content Pages: {
+EditorPage.page, 
+bookmarksIconPage.page, 
+bm_catcher.page }
 
-Custom Apex Controllers:
-KevansContentTemplate
-bookmarkIconclass
-bmCatcherclass
+Custom Apex Controllers: {
+KevansContentTemplate, 
+bookmarkIconclass, 
+bmCatcherclass }
 
 
 Things to do:
