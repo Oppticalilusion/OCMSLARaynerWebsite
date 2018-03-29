@@ -1,0 +1,38 @@
+<!--
+ - Created by kevanrayner on 2018-03-09.
+ -->
+
+<apex:page id="lr_t_TwoColumn_Table" controller="cms.CoreController" standardStylesheets="false" showHeader="false" sidebar="false" cache="false">
+    <apex:composition template="{!page_template_reference}">
+
+<apex:define name="header">
+    <apex:composition template="lr_I_head" />
+</apex:define>
+
+<apex:define name="body">
+<div class="wrapper">
+    <apex:composition template="lr_I_header" />
+    <main class="twobodytable">
+        <cms:Panel panelName="tbodyTitle" panelController="{!controller}" panelHeight="50px" panelWidth="500px"/>
+        <table class="tColumnTable" style="border: 0px solid white;" border="0">
+            <tbody>
+            <tr>
+                <td class="tbodyLeft" valign="top" width="60%">
+                    <cms:Panel panelName="tbodyLeft" panelController="{!controller}" panelHeight="150px" panelWidth="300px"/>
+                </td>
+                <td class="tbodyRight" valign="top" width="60%">
+                    <cms:Panel panelName="tbodyRight" panelController="{!controller}" panelHeight="150px" panelWidth="325px"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+
+<apex:composition template="lr_I_footer" />
+
+</div>
+</apex:define>
+
+</apex:composition>
+
+</apex:page>
