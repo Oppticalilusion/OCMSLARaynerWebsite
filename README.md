@@ -9,17 +9,39 @@ lr_l_header.page }
 
 Template Pages: {
 lr_t_OneColumn.page, 
-lr_t_TwoColumn.page }
+lr_t_TwoColumn.page,
+lr_t_TwoColumn_Table.page }
 
 Custom Content Pages: {
+ArticleBlockFullEditor.page,
+CustomContentEditor.page,
+CustomResourcesEditor.page,
 EditorPage.page, 
+blog_Editor.page,
+bm_catcher.page,
 bookmarksIconPage.page, 
 bm_catcher.page }
 
 Custom Apex Controllers: {
-KevansContentTemplate, 
-bookmarkIconclass, 
-bmCatcherclass }
+ArticleBlockFullClass.cls,
+CustomContentTemplate.cls,
+CustomResourcesTemplate.cls,
+KevansContentTemplate.cls, 
+blog_loaderclass.cls,
+bmCatcherclass.cls,
+bookmarkIconclass.cls, 
+cm_loaderclass.cls }
+
+Styling Pages: {
+master.css,
+testimonials.css,
+twoColumnTable.css }
+
+Javascript Pages: {
+api_javascript.js,
+blog_javascript.js,
+bookmarks_icon_js.js,
+simple_js.js }
 
 
 Things to do:
