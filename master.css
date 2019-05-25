@@ -9,13 +9,14 @@ header { /* Grid created for header section of all pages */
 	display: grid;
 	grid-template-columns: 70% 15% 15%;
 	grid-template-rows: 20% 40% 40%;
-	grid-template-areas: "a b c"
+	grid-template-areas:
+	"a b c"
 	"d e e"
 	"d f f";
 }
 
 /*----------------------------------------------------------------*/
-/* Css for created the header grid */
+/* Css for creating the header grid */
 /*.    [ a b c ]
 	   [ d e e ]
 	   [ d f f ]
@@ -34,12 +35,13 @@ header > p { /*Child immediately following the header (first paragraph) */
 
 header > p + p { /*Adjacent siblings to the first paragraph */
 	grid-area: f;
-	font-size: 26px;
+	font-size: 22px;
 }
 
 header span {
 	grid-area: b;
 	padding-right: 1em;
+	padding-top: 1.4em;
 }
 
 header .small-block-title {
@@ -67,6 +69,15 @@ header #searchForm input {
 	width: 150px;
 
 }
+
+.ocms-search-btn {
+	display: none;
+}
+
+.ocms-search-input {
+	value: "Type to search, then press enter";
+}
+
 /*----------------------------------------------------------------*/
 
 /* General page css */
@@ -80,7 +91,7 @@ body {
 body p {
 	border-bottom:0;
 	color: #555555;
-	font-size: 22px;
+	font-size: 18px;
 }
 
 footer {
@@ -89,15 +100,13 @@ footer {
 	margin: 1em 0;
 }
 
-footer p {
-	font-size: 14px;
-}
+footer p { font-size: 14px;  }
 /*----------------------------------------------------------------*/
 
 /* Css fused across multiple pages (not template specific)*/
 
 .menu {
-	font-size: 22px;
+	font-size: 18px;
 	margin: 1em 0 0 0;
 	font-family: palatino linotype, palatino, serif;
 	position: sticky;
@@ -106,7 +115,7 @@ footer p {
 }
 
 .menu > ul li {
-	display: inline;
+	display: inline-block;
 }
 
 .menu ul.root-level-list {
@@ -114,6 +123,7 @@ footer p {
 	padding-top: 0.3em;
 	text-align: center;
 	margin: 1em 0 0 0;
+	padding-bottom: 1em;
 }
 
 .menu li.root-level-item.active > a {
@@ -126,7 +136,6 @@ footer p {
 
 .menu a:hover {
 	border-bottom: 3px solid #0092CE;
-	border-bottom-width: 3px;
 }
 
 .menu a {
@@ -135,196 +144,88 @@ footer p {
 	padding: 0 15px;
 }
 
-.wrapper {
-	margin-left: 2.5%;
-	margin-right: 2.5%;
-	padding-left: 5%;
-	padding-right: 5%;
-	padding-top: 1em;
-	width: 85%;
-	height: 100%;
-	background-color: white;
+.multi_m_word a {
+	white-space: nowrap; /* Make sure multi word titles don't wrap */
 }
 
-.document-1-title strong {
-	font-weight: normal;
+/*---------------------------------------------------*/
+/* Everything to do with the Services drop down menu */
+/* services_class  :    initial <li> elem*/
+/* level-1-list    :    <ul> element*/
+/* level-1-item    :    <li> element*/
+
+.services_class {
+	position: relative;
+	z-index: 2;
 }
 
-/*----------------------------------------------------------------*/
-
-/*.  Body stuff for the 1 template pages */
-
-.fullBody .document-1-title { /* should be the title and underline */
-	font-size: 36px;
-	border-bottom: 1px solid #A52A2A;
-	padding-bottom: 0.3em;
-	font-family: palatino linotype,palatino,serif;
+.services_class >a:after {
+	display: inline-block;
+	content: "";
+	border-left: 0.3em solid transparent;
+	border-right: 0.3em solid transparent;
+	border-top: 0.4em solid #888888;
+	margin-left: 0.4em;
+	position: relative;
+	top: -.2em;
 }
 
-.fullBody .small-block-title {
-	font-size: 30px;
-	margin-top: 1em;
-	color: #0092CE;
-	margin-bottom: -0.5em;
-	padding-bottom: 0.2em;
-}
-
-.fullBody .small-block { /* Only the first block */
-	margin-bottom: 5em;
-}
-
-.fullBody .small-block + .small-block { /* All following blocks(siblings) */
-	font-size: 24px;
-	margin-top: 1em;
-	margin-bottom: 3.5em;
-	border-bottom: 1px solid #b8b8b8;
-}
-
-.fullBody .small-block:last-child { /* Avoid last underline */
-	border-bottom: none;
-}
-
-.fullBody .small-block + .small-block .small-block-title { /* Titles from the following blocks */
-	color: #555555;
-}
-
-.fullBody .small-block-title strong { /* Remove the bold */
-	font-weight: normal;
-}
-
-.fullBody img {
-	float: right; /* Quick fix for now */
-	margin-top: 1.5em;
-	margin-bottom: 7em;
-}
-
-.fullBody a {
-	color: #0092CE;
-	text-decoration: none; /* Remove underlines from links */
-	font-weight: normal;
-}
-/*----------------------------------------------------------------*/
-
-/* Testimonials block quote stuff */
-
-blockquote {
-	background-image: url("pics/quotes.png");
-	background-size: 100px;
-	background-repeat: no-repeat;
-	padding-left: 4rem; /* rem's because sizing */
-	padding-right: 3rem;
-	color: #555555;
-	font-style: italic;
-}
-
-/* Created classes for the custom testimonials content template */
-.custom_testimonials_block > blockquote {
-	font-size: 22.5px;
-}
-
-.custom_testimonials_block {
-	border-bottom: 1px solid #b8b8b8;
-	padding: 1em;
-	padding-top:2em;
-}
-
-.custom_testimonials_block:last-child {
-	border-bottom: none;
-}
-
-.custom_title, .custom_name, .custom_company, .custom_website {
-	margin: 0;
-}
-
-.custom_title {
-	font-size: 30px;
-}
-
-.custom_name {
-	padding-top: 0.2em;
-}
-
-.custom_company {
-	padding: 0;
-}
-
-.custom_website {
-	padding: 0;
-	text-decoration: none;
-}
-/*----------------------------------------------------------------*/
-
-/*.  Body stuff for the 2 template pages */
-
-.twobodystuff .document-1-title { /* should be the title and underline */
-	font-size: 31px;
-	border-bottom: 1px solid #A52A2A;
-	padding-bottom: 0.3em;
-	font-family: palatino linotype,palatino,serif;
-}
-
-main.twobodystuff { /* Main with a class name of twobodystuff */
-	display: inline-flex;
-}
-
-/*----------------------------------------------------------------*/
-
-.leftColumn { /* for the panels????? */
-	width: 72%;
-	padding-right: 1em;
-}
-
-.leftColumn img {
-	float: right;
-	margin-top: 1.5em;
-	margin-bottom: 7em;
-}
-
-.leftColumn ul {
-	font-size: 22px;
-}
-
-/*----------------------------------------------------------------*/
-
-.rightColumn {
-	width: 25.5%;
-	padding-left:0.5em;
-	border-left: 1px solid #DAD8D8; /* Gray line */
-}
-
-.rightColumn img { /* This is the intuit image */
-	margin-top: 1.5em;
-	margin-left: auto;
-	margin-right: auto;
+.services_class:hover .level-1-list{
 	display: block;
 }
 
-.rightColumn .small-block-title {
-	font-family: palatino linotype, palatino, serif;
-	font-size: 22px;
+/*-------------------------------------------------------------------*/
+/*---------------------------------------------------*/
+/* Everything to do with the Testimonials drop down menu */
+/* testimonials_class  :    initial <li> elem*/
+/* level-1-list    :    <ul> element*/
+/* level-1-item    :    <li> element*/
+
+.testimonials_class {
+	position: relative;
+	z-index: 1;
 }
 
-.rightColumn > .small-block {
-	border-bottom: 1px solid #DAD8D8;
-	padding-left: 1em;
+.testimonials_class >a:after {
+	display: inline-block;
+	content: "";
+	border-left: 0.3em solid transparent;
+	border-right: 0.3em solid transparent;
+	border-top: 0.4em solid #888888;
+	margin-left: 0.4em;
+	position: relative;
+	top: -.2em;
 }
 
-.rightColumn > .small-block + .small-block {
-	padding-top: 2em;
+.testimonials_class:hover .level-1-list{
+	display: block;
 }
 
-.rightColumn .small-block:last-child {
-	border-bottom: none;
+/* ----------- Consistent elements across the drop down menus ----------*/
+
+.level-1-list {
+	position: absolute;
+	left: 0;
+	background-color: #f1f1f1;
+	display: none;
 	text-align: center;
 }
+
+.level-1-list > .level-1-item {
+	display: block;
+	padding: 10px 30px 10px 0;
+}
+
+/*-------------------------------------------------------------------*/
 /*----------------------------------------------------------------*/
 /*Everything to do with the created testimonial class*/
 .testimonialWrapper {
+	border-top: 1px solid #b8b8b8;
 	border-bottom: 1px solid #b8b8b8;
 	padding: 1em;
 	padding-top: 2em;
 	color: #555555;
-	font-size: 22px;
+	font-size: 18px;
 }
 
 .testimonialWrapper:last-child {
@@ -332,7 +233,7 @@ main.twobodystuff { /* Main with a class name of twobodystuff */
 }
 
 .titleClass{
-	font-size: 30px;
+	font-size: 22px;
 	padding-bottom: 0.3em;
 }
 
@@ -352,7 +253,6 @@ main.twobodystuff { /* Main with a class name of twobodystuff */
 	text-decoration: none;
 }
 
-.quoteClass {  }
 .quoteClass > blockquote {
 	font-size: 22.5px;
 }
@@ -366,6 +266,197 @@ main.twobodystuff { /* Main with a class name of twobodystuff */
 .testimonialWrapper img[src="null"] { /* If a wrapper is made with no image, do not display the field */
 	display: none;
 }
+/*--------------------------------------------------------------*/
+
+.wrapper {
+
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+
+	/* margin-left: 2.5%; */
+	/* margin-right: 2.5%; */
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 1em;
+	/* width: 85%; */
+	height: 100%;
+	background-color: white;
+}
+
+.document-1-title strong {
+	font-weight: normal;
+}
+
+/*----------------------------------------------------------------*/
+
+/*.  Body stuff for the 1 template pages */
+
+.fullBody img {
+	float: right; /* Quick fix for now */
+	margin-top: 1.5em;
+	margin-bottom: 7em;
+}
+
+.fullBody a {
+	color: #0092CE;
+	text-decoration: none; /* Remove underlines from links */
+	font-weight: normal;
+}
+
+.fullBody .small-block-title strong { /* Remove the bold */
+	font-weight: normal;
+}
+
+.fullBody .document-1-title { /* should be the title and underline */
+	font-size: 24px;
+	border-bottom: 1px solid #A52A2A;
+	padding-bottom: 0.3em;
+	font-family: palatino linotype,palatino,serif;
+}
+
+.fullBody .small-block-title {
+	font-size: 24px;
+	margin-top: 1em;
+	color: #0092CE;
+	margin-bottom: -0.5em;
+	padding-bottom: 0.2em;
+}
+
+.fullBody .small-block { /* Only the first block */
+	margin-bottom: 5em;
+}
+
+.fullBody .small-block + .small-block { /* All following blocks(siblings) */
+	font-size: 18px;
+	margin-top: 1em;
+	margin-bottom: 3.5em;
+	border-bottom: 1px solid #b8b8b8;
+}
+
+.fullBody .small-block:last-child { /* Avoid last underline */
+	border-bottom: none;
+}
+
+.fullBody .small-block + .small-block .small-block-title { /* Titles from the following blocks */
+	color: #555555;
+}
+
+/*----------------------------------------------------------------*/
+
+/* Testimonials block quote stuff */
+
+blockquote {
+	background-image: url("pics/quotes.png");
+	background-size: 100px;
+	background-repeat: no-repeat;
+	padding-left: 4rem; /* rem's because sizing */
+	padding-right: 3rem;
+	color: #555555;
+	font-style: italic;
+}
+
+/* Created classes for the custom testimonials content template */
+.custom_testimonials_block > blockquote {
+	font-size: 18px;
+}
+
+.custom_testimonials_block {
+	border-bottom: 1px solid #b8b8b8;
+	padding: 1em;
+	padding-top:2em;
+}
+
+.custom_testimonials_block:last-child {
+	border-bottom: none;
+}
+
+.custom_title { font-size: 24px; }
+
+.custom_name { padding-top: 0.2em; }
+
+.custom_company { padding: 0; }
+
+.custom_website {
+	padding: 0;
+	text-decoration: none;
+}
+
+.custom_title, .custom_name, .custom_company, .custom_website {
+	margin: 0;
+}
+
+/*----------------------------------------------------------------*/
+
+/*.  Body stuff for the 2 template pages */
+
+main.twobodystuff { /* Main with a class name of twobodystuff */
+	display: inline-flex;
+}
+
+.twobodystuff .document-1-title { /* should be the title and underline */
+	font-size: 22px;
+	border-bottom: 1px solid #A52A2A;
+	padding-bottom: 0.3em;
+	font-family: palatino linotype,palatino,serif;
+}
+
+/*----------------------------------------------------------------*/
+
+.leftColumn { /* for the panels????? */
+	width: 72%;
+	padding-right: 1em;
+}
+
+.leftColumn img {
+	float: right;
+	margin-top: 1.5em;
+	margin-bottom: 7em;
+}
+
+.leftColumn ul {
+	font-size: 18px;
+}
+
+.leftColumn a {
+	text-decoration: none;
+	color: #0092CE;
+}
+
+/*----------------------------------------------------------------*/
+
+.rightColumn {
+	width: 25.5%;
+	padding-left:0.5em;
+	border-left: 1px solid #DAD8D8; /* Gray line */
+}
+
+.rightColumn img { /* This is the intuit image */
+	margin-top: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.rightColumn .small-block-title {
+	font-family: palatino linotype, palatino, serif;
+	font-size: 18px;
+}
+
+.rightColumn > .small-block {
+	border-bottom: 1px solid #DAD8D8;
+	padding-left: 1em;
+}
+
+.rightColumn > .small-block + .small-block {
+	padding-top: 2em;
+}
+
+.rightColumn .small-block:last-child {
+	border-bottom: none;
+	text-align: center;
+}
+
 /*----------------------------------------------------------------*/
 /* Currently does nothing but might be useful for setting things potentially*/
 .makeNone {
@@ -393,16 +484,56 @@ main.twobodystuff { /* Main with a class name of twobodystuff */
 	margin-bottom: 0 !important;
 }
 
+.root-level-item a.links:link { color: #0092CE; }
+.root-level-item a.links:visited { color: #0092CE; }
+.root-level-item a.links:hover { color: #000000; }
+
+#bookmarksp { font-size: 18px;}
+
+/*-----------------------------------------------------*/
+/* Everything to do with the Bookmarks drop down menu */
+
+.bookmarks_ul_class {
+	position: absolute;
+	left: 0;
+	background-color: #f1f1f1;
+	display: none;
+	text-align: center;
+	z-index: 0; /* will show up underneath anything with a larger(higher) z-index */
+}
+
+.bookmarks_ul_class > #linkButtons {
+	display: block;
+	padding: 10px 30px 10px 0;
+}
+
+.bookmarks_m_class:hover .bookmarks_ul_class {
+	display: block;
+}
+
+.bookmarks_m_class >a:after {
+	display: inline-block;
+	content: "";
+	border-left: 0.3em solid transparent;
+	border-right: 0.3em solid transparent;
+	border-top: 0.4em solid #888888;
+	margin-left: 0.4em;
+	position: relative;
+	top: -.2em;
+}
+
+.menu > ul .bookmarks_m_class {
+	position: relative;
+	display: none;
+}
+
+.bookmarks_ul_class #linkButtons a.links {
+	color: #888888;
+}
+
 .links {
 	display: inline-block;
 	padding: 0.2em;
 }
-
-a.links:link { color: #0092CE; }
-a.links:visited { color: #0092CE; }
-a.links:hover { color: #000000; }
-
-#bookmarksp { font-size: 18px;}
-
 
 /*----------------------------------------------------------------*/

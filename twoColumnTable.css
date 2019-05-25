@@ -1,0 +1,57 @@
+/* CSS for the Two Column Table Template */
+/* Used on the resources page */
+
+/*----------------------------------------------------------------*/
+.tColumnTable {
+    margin: 1em;
+    padding: 1em;
+}
+
+.tColumnTable li {
+    list-style-type: square;
+}
+
+.tColumnTable li a {
+    color: #0092CE;
+    text-decoration: none;
+}
+
+.tColumnTable .titleClass {
+    font-size: 20px;
+}
+
+.twobodytable .document-1-title { /* should be the title and underline */
+    font-size: 31px;
+    border-bottom: 1px solid #A52A2A;
+    padding-bottom: 0.3em;
+    font-family: palatino linotype,palatino,serif;
+}
+
+.tbodyRight img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5em;
+}
+
+
+
+/*----------------------------------------------------------------*/
+/* Origionally was trying to get the anchors to be offset above the actual place in the page */
+/* Instead since that didnt work, the work around was just to attach the anchor to the */
+/* Piece of content directly above the one we want to push to */
+/* #corpTax, #persTax {
+    padding-top: 200px;
+    margin-top: -200px;
+}  */
+
+
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/

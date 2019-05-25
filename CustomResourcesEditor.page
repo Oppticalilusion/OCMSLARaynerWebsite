@@ -1,0 +1,48 @@
+<!--
+ - Created by kevanrayner on 2018-03-08.
+ -->
+
+<apex:page controller="cms.CreateContentController" extensions="CustomResourcesTemplate" showHeader="false"
+           sidebar="false" cache="false" standardStylesheets="false">
+
+    <!-- <link rel="stylesheet" href="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/css/testimonials.css')}" type="text/css" charset="utf-8" />
+-->
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            CKEDITOR.replace('rList', {!CKEditorConfig});
+
+            ce.content_editor('registerSaveFunction', function() {
+                var attributes = [
+                    { name: 'rTitle', value: $('#rTField').val(), type: 'Text'},
+                    { name: 'rList', value: CKEDITOR.instances['rList'].getData(), type: 'Text'}
+                ];
+
+                return attributes;
+            });
+        });
+    </script>
+
+<!--
+    <div class="test_item_wrap">
+        <label class="titleLabel" for="titleField"> Title </label>
+        <input id="titleField" type="text" value="{!rTitle}"/>
+        <p class="ocmsHelpText"> The title of the article. </p>
+    </div>
+    -->
+    <div class="test_item_wrap">
+        <label class="rTLabel" for="rTField"> Title </label>
+        <input id="rTField" type="text" value="{!rTitle}"/>
+        <p class="ocmsHelpText"> The Title of the Article. </p>
+    </div>
+
+    <br/>
+
+    <div class="test_item_wrap">
+        <label class="ocmsLabel"><b> List </b></label>
+        <apex:outputText escape="false">
+            <textarea name="rList">{!rList}</textarea>
+        </apex:outputText>
+    </div>
+
+
+</apex:page>

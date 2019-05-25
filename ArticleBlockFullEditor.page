@@ -1,0 +1,49 @@
+<!--
+ - Created by kevanrayner on 2018-03-22.
+ -->
+
+<apex:page controller="cms.CreateContentController" extensions="ArticleBlockFullClass" showHeader="false"
+           sidebar="false" cache="false" standardStylesheets="false">
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            CKEDITOR.replace('artContent', {!CKEditorConfig});
+
+            ce.content_editor('registerSaveFunction', function() {
+                var attributes = [
+                    { name: 'artTitle', value: $('#artTitleField').val(), type: 'Text'},
+                    { name: 'artAuthor', value: $('#artAuthorField').val(), type: 'Text'},
+                    { name: 'artContent', value: CKEDITOR.instances['artContent'].getData(), type: 'Text'}
+                ];
+
+                return attributes;
+            });
+        });
+    </script>
+
+
+    <div class="test_item_wrap">
+        <label class="artTitleLabel" for="artTitleField"> Title </label>
+        <input id="artTitleField" type="text" value="{!artTitle}"/>
+        <p class="ocmsHelpText"> The Title of the Article. </p>
+    </div>
+
+    <br/>
+
+    <div class="test_item_Wrap">
+        <label class="artAuthorLabel" for="artAuthorField"> Author Name</label>
+        <input id="artAuthorField" type="text" value="{!artAuthor}"/>
+        <p class="ocmsHelpText"> The Article's Author</p>
+    </div>
+
+    <br/>
+
+    <div class="test_item_wrap">
+        <label class="ocmsLabel"><b> Article Content </b></label>
+        <apex:outputText escape="false">
+            <textarea name="artContent">{!artContent}</textarea>
+        </apex:outputText>
+    </div>
+
+
+</apex:page>

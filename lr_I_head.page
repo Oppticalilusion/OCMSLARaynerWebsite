@@ -1,6 +1,19 @@
 <apex:page controller="cms.CoreController" standardStylesheets="false" showHeader="false" sidebar="false" cache="false">
 
     <link rel="stylesheet" href="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/css/master.css')}" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/css/twoColumnTable.css')}" type="text/css"  charset="utf-8" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i" />
-    
+
+    <apex:includeScript value="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/js/bookmarks_icon_js.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/js/api_javascript.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/js/simple_js.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.lb_PageSupport, 'siteStatics/js/blog_javascript.js')}"/>
+
+    <script>
+
+        //fixSearchBar();
+        document.getElementById("oSearch").value = "Type to search, then press enter";
+        console.log("Hello");
+    </script>
+
 </apex:page>
