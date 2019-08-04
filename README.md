@@ -1,7 +1,5 @@
 # OCMSLARaynerWebsite
 
-Will add all pages that are used to the website, goal is to get a feel for Git
-
 Layout Pages: {
 lr_l_footer.page, 
 lr_l_head.page, 
@@ -60,4 +58,6 @@ Original Site by
 Created on Salesfore through the OCMS built by Stantive technologies. Project was used to expand on my knowledge of how to take an existing product and add new web functionality. To work on css styling and how to provide a clean consistant product.
 
 Expanded in an understanding of bringing HTML, CSS and Javascript together to create a more dynamic and responsive site.
+
+Learning to work with a content management system.
 
